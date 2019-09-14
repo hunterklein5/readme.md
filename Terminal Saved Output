@@ -1,0 +1,394 @@
+Last login: Sun Jul 21 10:58:26 on console
+hunters-MacBook-Pro:~ hunterklein$ hklein2
+-bash: hklein2: command not found
+hunters-MacBook-Pro:~ hunterklein$ hklein
+-bash: hklein: command not found
+hunters-MacBook-Pro:~ hunterklein$ ssh hklein2
+ssh: Could not resolve hostname hklein2: nodename nor servname provided, or not known
+hunters-MacBook-Pro:~ hunterklein$ ssh
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
+           [-D [bind_address:]port] [-E log_file] [-e escape_char]
+           [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J [user@]host[:port]] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-p port] [-Q query_option] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           [user@]hostname [command]
+hunters-MacBook-Pro:~ hunterklein$ ssh hklein2@unl.cse.edu
+ssh: Could not resolve hostname unl.cse.edu: nodename nor servname provided, or not known
+hunters-MacBook-Pro:~ hunterklein$ ssh hklein2@cse.edu.unl
+ssh: Could not resolve hostname cse.edu.unl: nodename nor servname provided, or not known
+hunters-MacBook-Pro:~ hunterklein$ ssh @hklein2@cse.edu.unl
+ssh: Could not resolve hostname cse.edu.unl: nodename nor servname provided, or not known
+hunters-MacBook-Pro:~ hunterklein$ cse.unl.edu.
+-bash: cse.unl.edu.: command not found
+hunters-MacBook-Pro:~ hunterklein$ ssh hklein@cse.unl.edu
+The authenticity of host 'cse.unl.edu (129.93.165.2)' can't be established.
+ECDSA key fingerprint is SHA256:HLNMaunQxxiW7HlkAJwlMkO8PXPK9xmUQQZVxh3DeTA.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added 'cse.unl.edu,129.93.165.2' (ECDSA) to the list of known hosts.
+Password: 
+Last login: Thu Sep  5 13:31:37 2019 from 129.93.165.87
+******************************************************************************
+                               Welcome to CSE
+******************************************************************************
+
+The operating system on this computer was upgraded on March 18, 2018.
+
+Please contact "manager@cse.unl.edu" to report problems, request software
+or ask questions about this system.
+
+******************************************************************************
+cse ugrad/hklein> ls
+labs
+cse ugrad/hklein> mkdir hw
+cse ugrad/hklein> cd hw
+Directory: /home/ugrad/hklein/hw
+cse hklein/hw> git clone https://github.com/hunterklein5/KaprekarProject.git
+Cloning into 'KaprekarProject'...
+remote: Enumerating objects: 68, done.
+remote: Total 68 (delta 0), reused 0 (delta 0), pack-reused 68
+Unpacking objects: 100% (68/68), done.
+cse hklein/hw> ls
+KaprekarProject
+cse hklein/hw> cd KaprekarProject/
+Directory: /home/ugrad/hklein/hw/KaprekarProject
+cse hw/KaprekarProject> ls
+build.xml  c_version  lib  readme.md  src
+cse hw/KaprekarProject> make kaprekarDemo
+make: *** No rule to make target 'kaprekarDemo'.  Stop.
+cse hw/KaprekarProject> ls
+build.xml  c_version  lib  readme.md  src
+cse hw/KaprekarProject> cd c_version/
+Directory: /home/ugrad/hklein/hw/KaprekarProject/c_version
+cse KaprekarProject/c_version> ls
+kaprekarDemo.c  kaprekarTestCmocka.c  kaprekarUtils.h
+kaprekarTest.c  kaprekarUtils.c       makefile
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:28:12: error: ‘false’ undeclared (first use in this function)
+     return false;
+            ^
+kaprekarUtils.c:28:12: note: each undeclared identifier is reported only once for each function it appears in
+kaprekarUtils.c:40:15: error: ‘numberOfDigits’ undeclared (first use in this function)
+   for(i=1; i<=numberOfDigits; i++) {
+               ^
+kaprekarUtils.c:42:5: error: ‘modulous’ undeclared (first use in this function)
+     modulous *= 10;
+     ^
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+kaprekarUtils.c:35:7: warning: unused variable ‘numDigits’ [-Wunused-variable]
+   int numDigits = (int) log10(n) + 1;
+       ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> ls
+kaprekarDemo.c  kaprekarTestCmocka.c  kaprekarUtils.h
+kaprekarTest.c  kaprekarUtils.c       makefile
+cse KaprekarProject/c_version> atom kaprekarUtils.c
+cse KaprekarProject/c_version> atom kaprekarUtils.c
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:28:16: error: expected expression before ‘/’ token
+     return 0; */ No booleans, changed False to 0.
+                ^
+kaprekarUtils.c:40:15: error: ‘numberOfDigits’ undeclared (first use in this function)
+   for(i=1; i<=numberOfDigits; i++) {
+               ^
+kaprekarUtils.c:40:15: note: each undeclared identifier is reported only once for each function it appears in
+kaprekarUtils.c:42:5: error: ‘modulous’ undeclared (first use in this function)
+     modulous *= 10;
+     ^
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+kaprekarUtils.c:35:7: warning: unused variable ‘numDigits’ [-Wunused-variable]
+   int numDigits = (int) log10(n) + 1;
+       ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:40:15: error: ‘numberOfDigits’ undeclared (first use in this function)
+   for(i=1; i<=numberOfDigits; i++) {
+               ^
+kaprekarUtils.c:40:15: note: each undeclared identifier is reported only once for each function it appears in
+kaprekarUtils.c:42:5: error: ‘modulous’ undeclared (first use in this function)
+     modulous *= 10;
+     ^
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+kaprekarUtils.c:35:7: warning: unused variable ‘numDigits’ [-Wunused-variable]
+   int numDigits = (int) log10(n) + 1;
+       ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:42:5: error: ‘modulous’ undeclared (first use in this function)
+     modulous *= 10;
+     ^
+kaprekarUtils.c:42:5: note: each undeclared identifier is reported only once for each function it appears in
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:42:5: error: ‘modulous’ undeclared (first use in this function)
+     modulous *= 10;
+     ^
+kaprekarUtils.c:42:5: note: each undeclared identifier is reported only once for each function it appears in
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:45:22: error: ‘modulus’ undeclared (first use in this function)
+     first = square / modulus;
+                      ^
+kaprekarUtils.c:45:22: note: each undeclared identifier is reported only once for each function it appears in
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> ls
+kaprekarDemo.c  kaprekarTestCmocka.c  kaprekarUtils.h
+kaprekarTest.c  kaprekarUtils.c       makefile
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+kaprekarUtils.c:37:15: warning: unused variable ‘second’ [-Wunused-variable]
+   long first, second;
+               ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:51:24: error: lvalue required as left operand of assignment
+     if(second > 0 && n = first + second) {
+                        ^
+kaprekarUtils.c:37:15: warning: unused variable ‘second’ [-Wunused-variable]
+   long first, second;
+               ^
+makefile:17: recipe for target 'kaprekarUtils.o' failed
+make: *** [kaprekarUtils.o] Error 1
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make kaprekarDemo
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+gcc  -Wall -g kaprekarDemo.c kaprekarUtils.o -lm -o kaprekarDemo
+cse KaprekarProject/c_version> make kaprekarTest
+gcc  -Wall -g kaprekarTest.c kaprekarUtils.o -lm -o kaprekarTest
+cse KaprekarProject/c_version> ./kaprekarTest 
+Floating exception (core dumped)
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> ./kaprekarTest
+Floating exception (core dumped)
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> git commit -m "Fixed Syntax"
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+	modified:   kaprekarUtils.c
+
+no changes added to commit
+cse KaprekarProject/c_version> git add .
+cse KaprekarProject/c_version> git commit -m "Fixed Syntax"
+[master 4a4a701] Fixed Syntax
+ Committer: Hunter Travis Klein <hklein@cse.unl.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+cse KaprekarProject/c_version> git push
+Username for 'https://github.com': hunterklein5         
+Password for 'https://hunterklein5@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/hunterklein5/KaprekarProject.git/'
+cse KaprekarProject/c_version> Lions10698
+Lions10698: Command not found.
+cse KaprekarProject/c_version> git push
+Username for 'https://github.com': hunterklein5
+Password for 'https://hunterklein5@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 64 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 388 bytes | 388.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/hunterklein5/KaprekarProject.git
+   476758e..4a4a701  master -> master
+cse KaprekarProject/c_version> ls
+kaprekarDemo    kaprekarTest    kaprekarTestCmocka.c  kaprekarUtils.h  makefile
+kaprekarDemo.c  kaprekarTest.c  kaprekarUtils.c       kaprekarUtils.o
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> nano kaprekarTest.c
+cse KaprekarProject/c_version> ./kaprekarTest
+Floating exception (core dumped)
+cse KaprekarProject/c_version> ls
+kaprekarDemo    kaprekarTest    kaprekarTestCmocka.c  kaprekarUtils.h  makefile
+kaprekarDemo.c  kaprekarTest.c  kaprekarUtils.c       kaprekarUtils.o
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> ./kaprekarTest 56
+Floating exception (core dumped)
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> ./kaprekarTest 56
+Floating exception (core dumped)
+cse KaprekarProject/c_version> ./kaprekarTest 
+Floating exception (core dumped)
+cse KaprekarProject/c_version> nano kaprekarUtils.c
+cse KaprekarProject/c_version> make
+make                makedeltaiso        makeglossaries-lite makembindex
+make4ht             makedeltarpm        makeindex           make_method
+makealias           makedepend          makeinfo            makeprofiledb
+makeblastdb         makedtx             makejvf             
+makecert            makeg               makekdewidgets      
+makedb              makeglossaries      makemap             
+cse KaprekarProject/c_version> make kaprekarDemo 
+gcc  -Wall -g -c kaprekarUtils.c -lm -o kaprekarUtils.o 
+kaprekarUtils.c: In function ‘isKaprekar’:
+kaprekarUtils.c:37:15: warning: unused variable ‘second’ [-Wunused-variable]
+   long first, second;
+               ^
+kaprekarUtils.c:37:8: warning: unused variable ‘first’ [-Wunused-variable]
+   long first, second;
+        ^
+gcc  -Wall -g kaprekarDemo.c kaprekarUtils.o -lm -o kaprekarDemo
+cse KaprekarProject/c_version> ./kaprekarTest
+Floating exception (core dumped)
+cse KaprekarProject/c_version> make kaprekarTest
+gcc  -Wall -g kaprekarTest.c kaprekarUtils.o -lm -o kaprekarTest
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ./kaprekarTest
+i = 4879: is a known Kaprekar number, but the method returned false
+i = 5292: is a known Kaprekar number, but the method returned false
+i = 38962: is a known Kaprekar number, but the method returned false
+Number of tests passed: 100008
+Number of tests failed: 3
+Percentage Test Cases passed: 100.00
+cse KaprekarProject/c_version> ls
+kaprekarDemo    kaprekarTest    kaprekarTestCmocka.c  kaprekarUtils.h  makefile
+kaprekarDemo.c  kaprekarTest.c  kaprekarUtils.c       kaprekarUtils.o
+cse KaprekarProject/c_version> git add .
+cse KaprekarProject/c_version> git commit - m "Add long to the first and second variable declarations, initialized modulus to 1 instead of zero to avoid division by zero"
+error: pathspec '-' did not match any file(s) known to git.
+error: pathspec 'm' did not match any file(s) known to git.
+error: pathspec 'Add long to the first and second variable declarations, initialized modulus to 1 instead of zero to avoid division by zero' did not match any file(s) known to git.
+cse KaprekarProject/c_version> git commit -m "Add long to the first and second variable declarations, initialized modulus to 1 instead of zero to avoid division by zero"
+[master 54d27e0] Add long to the first and second variable declarations, initialized modulus to 1 instead of zero to avoid division by zero
+ Committer: Hunter Travis Klein <hklein@cse.unl.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+cse KaprekarProject/c_version> git push
+Username for 'https://github.com': hunterklein5
+Password for 'https://hunterklein5@github.com': 
+Counting objects: 4, done.
+Delta compression using up to 64 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 449 bytes | 449.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/hunterklein5/KaprekarProject.git
+   4a4a701..54d27e0  master -> master
+cse KaprekarProject/c_version> 
